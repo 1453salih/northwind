@@ -19,6 +19,10 @@ public class DataResult<T> extends Result {
         this.data = data;
     }
 
+    //getter tanımlanır.
+    public T getData(){
+        return this.data;
+    }
 
 
 
