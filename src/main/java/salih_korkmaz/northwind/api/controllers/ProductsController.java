@@ -5,6 +5,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import salih_korkmaz.northwind.business.abstracts.ProductService;
+import salih_korkmaz.northwind.core.utilities.results.Result;
 import salih_korkmaz.northwind.entities.concretes.Product;
 
 import java.util.List;
@@ -13,12 +14,14 @@ import java.util.List;
 @RequestMapping("/api/products")
 public class ProductsController {
 
+    private ProductService productService;
+
     @Autowired //Projeyi tarar
     public ProductsController(ProductService productService) {
         this.productService = productService;
     }
 
-    private ProductService productService;
+
 
     @GetMapping("/getall")
     public List<Product> getAll() {
